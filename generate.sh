@@ -1,11 +1,7 @@
 #!/bin/bash -xe
-tftproot="$1"
-image="$2"
 source ./config.cfg
 test -z "$tftproot" -o -z "$image" && echo "Usage: $0 <tftproot> <gentoo-iso>" >&2 && exit 1
 test -e "$tmp" && echo "Temporary path '$tmp' already exists." >&2 && exit 1
-
-
 
 # prepare directories
 mkdir -p "$tmp" "$iso" "$initrd/mnt/cdrom"
@@ -14,9 +10,6 @@ mkdir -p "$tmp" "$iso" "$initrd/mnt/cdrom"
 sudo mount -o ro,loop "$image" "$iso"
 cp "$iso"/{image.squashfs,isolinux/gentoo,isolinux/gentoo.igz} "$tmp"
 sudo umount "$iso"
-
-# rename kernel
-#mv "$tmp/gentoo" "$tmp/kernel"
 
 # patch initramfs and add squashfs to it
 xz -dc "$tmp/gentoo.igz" | ( cd "$initrd" && sudo cpio -idv )
