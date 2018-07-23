@@ -15,7 +15,7 @@
   archivesqfs="source/squashfs-tools-4.3-i586-3.txz"  
   #### Path to tmp directory  
   tmp="./tmp"  
-  ### Path to temporary iso gentoo minimal  
+  #### Path to temporary iso gentoo minimal  
   iso="$tmp/iso"  
   #### Path to temporary initrd firectory   
   initrd="$tmp/initrd.dir"  
