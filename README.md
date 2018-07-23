@@ -7,7 +7,7 @@
 6.  mkpxeboot.sh: create tar archive with tftp boot
 7.  pack_image.sh: build image
 8.  prepare.sh: install package
-## config.cfg  
+# config.cfg  
   #### Directory for tftp  
   tftproot="tftp"  
   #### Path to iso image gentoo-minimal  
@@ -17,7 +17,7 @@
   tmp="./tmp"  
   #### Path to temporary iso gentoo minimal  
   iso="$tmp/iso"  
-  #### Path to temporary initrd firectory   
+  #### Path to temporary initrd directory   
   initrd="$tmp/initrd.dir"  
-  #### Auto mode, run repare.sh, mkautostart.sh, pack_image.sh  
+  #### Auto mode, run prepare.sh, mkautostart.sh, pack_image.sh  
   auto=1  
