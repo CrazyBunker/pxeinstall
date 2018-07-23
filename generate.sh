@@ -1,4 +1,5 @@
 #!/bin/bash -xe
+sudo ./clean.sh
 source ./config.cfg
 test -z "$tftproot" -o -z "$image" && echo "Usage: $0 <tftproot> <gentoo-iso>" >&2 && exit 1
 test -e "$tmp" && echo "Temporary path '$tmp' already exists." >&2 && exit 1
@@ -64,4 +65,5 @@ echo "Add Squashfs tool in image"
     sudo ./prepare.sh
 	sudo ./mkautostart.sh
 	sudo ./pack_image.sh
+	sudo ./mkpxeboot.sh
 fi

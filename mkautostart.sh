@@ -9,7 +9,7 @@ sudo patch -d "$tmp/root/root/" -p0 <<'EOF'
  fi
 +
 +setterm -blank 0
-+server='192.168.1.97'
++server='192.168.0.1'
 +share="pxeboot"
 +if [ $(tty) = "/dev/tty1" ];then
 +rmmod tg3
