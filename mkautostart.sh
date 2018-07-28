@@ -26,7 +26,7 @@ sudo patch -d "$tmp/root/root/" -p0 <<'EOF'
 +ntpdate $server
 +ip address
 +mkdir -p /mnt/net
-+mount //$server/$share /mnt/net -o username=anon,password=nopass
++mount -t nfs 192.168.0.1:/srv/template /mnt/net
 +/mnt/net/script.sh
 +fi
 EOF
