@@ -12,7 +12,7 @@
   tftproot="tftp"  
   #### Path to iso image gentoo-minimal  
   image="source/install-x86-minimal-20180718T214502Z.iso"  
-  archivesqfs="source/squashfs-tools-4.3-i586-3.txz"  
+  archivesqfs="source/squashfs-tools-4.3-x86_64-1.txz  
   #### Path to tmp directory  
   tmp="./tmp"  
   #### Path to temporary iso gentoo minimal  
@@ -21,3 +21,8 @@
   initrd="$tmp/initrd.dir"  
   #### Auto mode, run prepare.sh, mkautostart.sh, pack_image.sh  
   auto=1  
+ # Generate tftp
+ To create the kernel and the initrd image, create the source directory, place the gentoo-minimal image, the slackware squashfs-tool package, the script provides an automatic mode (in the "auto" config file), it starts the decompression of the necessary components from gentoo-minimal, dissects and packs into a new image.
+In manual mode, run generate.sh (create the tmp directory) then prepare.sh (install the squashfs-tools package), then mkautostart.sh (Add the necessary items in .bashrc), at the end of pack_image.sh, it will create gentoo and initramfs.gz
+# script.sh
+  script.sh - script auto-markup, unpacking squashfs images and generating a boot record
